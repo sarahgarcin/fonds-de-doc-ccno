@@ -1,0 +1,28 @@
+// -------------- MOBILE-FIRST HEADER --------------
+
+header{
+	width: 100%;
+	max-width: 100%;
+	position: fixed;
+	left:0;
+	top:0; 
+	background: $mainColor;
+	z-index: 100; 
+	align-items: center;
+	padding: $marginSmall $marginBig; 
+	&.row{margin:0;}
+	a{text-decoration:none;}
+	h1{
+		font-size:$menuSize;
+		margin:0;
+	}
+	.logo{
+		text-align: center; 
+	}
+}
+
+
+// -------------- DESKTOP HEADER --------------
+@media only screen and (min-width: 48em){
+
+}

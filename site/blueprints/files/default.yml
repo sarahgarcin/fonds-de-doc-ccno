@@ -1,0 +1,21 @@
+title: Image
+
+columns:
+  - width: 1/2
+    sections:
+      content:
+        type: fields
+        fields:
+          caption:
+            label: Légende de l'image
+            type: markdown
+
+
+  - width: 1/2
+    sections:
+      meta:
+        type: fields
+        fields:
+          alt:
+            label: Texte alternatif
+            type: text

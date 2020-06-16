@@ -1,0 +1,152 @@
+  // I M P O R T
+  // -------------- MOBILE-FIRST --------------
+  @import "_variables.scss";
+
+  *{
+    box-sizing: border-box;
+  	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body{
+  	margin: 0; 
+    font-size: $textSize; 
+    font-family: $font;
+    background: $backgroundColor;
+    line-height: 1.2;
+    color: rgb(41, 41, 41);
+  }
+
+  // -------------- RESET.CSS --------------
+  ul, ol{margin:0; padding:0;}
+  li{list-style:none;}
+  a{color: #000;text-decoration: none;}
+  a:visited{color: #000;}
+  a:hover{}
+  img {width: 100%;}
+  figure{margin:0;}
+  figcaption{
+    font-size: .7em;
+  }
+  p{
+    font-size: $textSize; 
+  }
+  
+  h1{
+    font-size: 3rem;
+    margin-top:$marginSmall;
+    margin-bottom: $marginNormal;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  h2{
+    color: $mainColor;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  h2 + ul{
+    margin-top: $marginNormal;
+  }
+
+  h3{
+    font-size:$menuSize; 
+    margin:0; 
+    font-weight:normal;
+  }
+
+
+  h4{
+    color: $rose; 
+    font-weight: 700;
+    margin-bottom: $marginNormal;
+  }
+
+  h5{
+    margin-top: $marginBig;
+    margin-bottom: $marginSmall;
+  }
+
+  blockquote{
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    border-left: 5px solid rgba(17, 33, 77, 0.2);
+  }
+
+
+  video, iframe{
+    width: 100%;
+  }
+
+  figure{
+    &.border{
+      border: 0.1em solid rgba(0,0,0,.1);
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    }
+  }
+
+
+  // -------------- IMPORT TEMPlATES STYLES --------------
+  @import "header.scss";
+
+
+  // -------------- MOBILE-FIRST GENERAL --------------
+  .show-for-small-only{
+  	display:block;
+  }
+
+  .hide-for-small-only{
+  	display:none;
+  }
+
+
+  main{
+    padding: 47px $marginBig; 
+    font-size: $textSize;
+    margin-bottom: 200px;
+    width: 100%;
+    margin:auto;
+    max-width: 1500px;
+
+  } 
+
+  .list-books{
+    .list-books__th{
+      color: $mainColor;
+      border-bottom: 2px solid $mainColor;
+      position: fixed; 
+      width: calc(100% - calc(36px*2));
+      background: #FFF; 
+      padding: $marginSmall;
+    }
+    .list-books-content{
+      padding-top: 45px;
+      article{
+        border-bottom: 1px solid $mainColor;
+        padding: $marginSmall;
+        p{
+          margin:0;
+        }
+        .fold{
+          display:none;
+        }
+      }
+    }
+  }
+
+
+  // -------------- DESKTOP GENERAL --------------
+  @media only screen and (min-width: 48em){
+    .show-for-small-only{
+        display:none !important;
+    }
+    .hide-for-small-only{
+        display:block !important;
+    }
+  }
+
+
+
+
+

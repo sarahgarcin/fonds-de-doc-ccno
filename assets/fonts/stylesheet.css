@@ -1,0 +1,18 @@
+
+@font-face {
+    font-family: 'directrice';
+    src: url('Directrice-Regular.woff2') format('woff2'),
+         url('Directrice-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'directrice';
+    src: url('Directrice.woff2') format('woff2'),
+         url('Directrice.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}

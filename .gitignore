@@ -1,0 +1,11 @@
+.DS_Store
+.directory
+package-lock.json
+
+/content
+/content.bak
+/media
+/node_modules
+/site/accounts
+/site/cache
+/site/sessions

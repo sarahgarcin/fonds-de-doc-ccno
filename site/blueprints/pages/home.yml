@@ -1,0 +1,10 @@
+title: Accueil
+preset: page
+pages: false
+
+fields:
+  text:
+    label: Texte
+    type: textarea
+    size: medium
+
