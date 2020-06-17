@@ -3,7 +3,7 @@
 
 <?php 
 
-  $csv      = csv($page->root() . '/ccno.csv', '^');
+  $csv = csv($page->root() . '/ccno.csv', '^');
   $kirby->impersonate('kirby');
   $i = 0; 
   foreach ($csv as $book) {
@@ -49,7 +49,7 @@
 			<div class="list-books__th list-books__th--desktop">
 				<div class="list-books__details">
 					<div class="list-books__details__inner row">
-						<div class="list-books__td list-books__td--title col-md-4">
+						<div class="list-books__td list-books__td--title col-md-4 active">
 							<a href="/sort:title" title="Titre">Titre</a>
 						</div>
 						<div class="list-books__td list-books__td--author col-md-3">
@@ -59,7 +59,7 @@
 							<a href="/sort:year" title="Année">Année</a>
 						</div>
 						<div class="list-books__td list-books__td--tags">Mots-clés</div>
-						<div class="list-books__td c-films__td--genre col-md-1">
+						<div class="list-books__td list-books__td--type col-md-1">
 							<a href="/sort:type" title="Genre">Genre</a>
 						</div>
 					</div>
@@ -68,6 +68,7 @@
 			<div class="list-books-content">
 				<?php 
 					$books = $page->children();
+					
 					// sort by category
 					$books = $books->sortBy('title');
 					if($sort = param('sort')) {
@@ -100,8 +101,8 @@
 							?>
 							<ul class="list-books__td tags">
 								<?php foreach($fiveTags as $tag):?>
-									<li>
-										<a href="/tag:<?= urlencode($tag)?>" title="<?= $tag?>">
+									<li class="tag" data-tag="<?= urlencode($tag)?>">
+										<a href="/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
 											<?= $tag?>
 										</a>
 									</li>

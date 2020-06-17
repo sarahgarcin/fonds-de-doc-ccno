@@ -79,14 +79,6 @@
     width: 100%;
   }
 
-  figure{
-    &.border{
-      border: 0.1em solid rgba(0,0,0,.1);
-      box-shadow: 0 1px 4px rgba(0,0,0,.1);
-    }
-  }
-
-
   // -------------- IMPORT TEMPlATES STYLES --------------
   @import "header.scss";
 
@@ -102,7 +94,7 @@
 
 
   main{
-    padding: 47px $marginBig; 
+    padding: 43px $marginBig; 
     font-size: $textSize;
     margin-bottom: 200px;
     width: 100%;
@@ -116,16 +108,44 @@
       color: $mainColor;
       border-bottom: 2px solid $mainColor;
       position: fixed; 
+      z-index: 99;
       width: calc(100% - calc(36px*2));
       background: #FFF; 
       padding: $marginSmall;
+      .list-books__td{
+        padding-left: 5px;
+        > a{
+          color: $mainColor;
+          &:before{
+            content:"↑";
+            margin-right: 2px;
+            position:relative;
+            bottom:2px;
+            opacity: 0.5;
+          }
+        }
+        &.active{
+          a:before{
+            opacity:1;
+          }
+        }
+      }
     }
-    .list-books__td--tags{
-      width: 20%;
-      padding-right: 1rem;
-      padding-left: 1rem;
+
+    .list-books__details__inner{
+      cursor: pointer;
+      &:hover{
+        &:not(.tags){
+          color:$mainColor;
+        }
+      }
     }
     .list-books__td{
+      &.list-books__td--tags{
+        width: 20%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+      }
       &.tags{
         width: 20%;
         padding-right: 1rem;
@@ -133,6 +153,9 @@
         li{
           display:inline-block;
           position:relative;
+          &.active a{
+            color: $mainColor;
+          }
           &:after{
             content:",";
             position:relative;

@@ -25,7 +25,6 @@ module.exports.pluginStyles = [
  * their order of concatenation.
  */
 module.exports.userScripts = [
-	'assets/js/sketch.js',
   'assets/js/main.js'
 ];
 
