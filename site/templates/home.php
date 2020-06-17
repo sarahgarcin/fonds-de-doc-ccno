@@ -50,17 +50,17 @@
 				<div class="list-books__details">
 					<div class="list-books__details__inner row">
 						<div class="list-books__td list-books__td--title col-md-4">
-							<a href="/sort:title" title="Titre">Titre</a>
+							<a href="<?=$site->url()?>/sort:title" title="Titre">Titre</a>
 						</div>
 						<div class="list-books__td list-books__td--author col-md-3">
-							<a href="/sort:author" title="Auteur">Auteur.trice.s</a>
+							<a href="<?=$site->url()?>/sort:author" title="Auteur">Auteur.trice.s</a>
 						</div>
 						<div class="list-books__td list-books__td--year col-md-1">
-							<a href="/sort:year" title="Année">Année</a>
+							<a href="<?=$site->url()?>/sort:year" title="Année">Année</a>
 						</div>
 						<div class="list-books__td list-books__td--tags">Mots-clés</div>
 						<div class="list-books__td list-books__td--type col-md-1">
-							<a href="/sort:type" title="Genre">Genre</a>
+							<a href="<?=$site->url()?>/sort:type" title="Genre">Genre</a>
 						</div>
 					</div>
 				</div>
@@ -102,7 +102,7 @@
 							<ul class="list-books__td tags">
 								<?php foreach($fiveTags as $tag):?>
 									<li class="tag" data-tag="<?= urlencode($tag)?>">
-										<a href="/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
+										<a href="<?=$site->url()?>/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
 											<?= $tag?>
 										</a>
 									</li>
@@ -138,7 +138,7 @@
 									<ul class="book__tags">
 										<?php foreach($tags as $tag):?>
 											<li class="tag" data-tag="<?= urlencode($tag)?>">
-												<a href="/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
+												<a href="<?=$site->url()?>/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
 													<?= $tag?>
 												</a>
 											</li>

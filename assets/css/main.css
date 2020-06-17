@@ -135,7 +135,8 @@ main {
   margin-bottom: 200px;
   width: 100%;
   margin: auto;
-  max-width: 1500px; }
+  max-width: 1500px;
+  position: relative; }
 
 .list-books .list-books__th {
   color: #ff5499;
@@ -144,7 +145,8 @@ main {
   z-index: 99;
   width: calc(100% - calc(36px*2));
   background: #FFF;
-  padding: 9px; }
+  padding: 9px;
+  max-width: calc(1500px - calc(36px*2)); }
   .list-books .list-books__th .list-books__td {
     padding-left: 5px; }
     .list-books .list-books__th .list-books__td > a {
@@ -230,7 +232,8 @@ main {
   padding-right: 0.8rem; }
   .book__image .book__image__inner {
     width: 100%;
-    height: 430px;
+    height: 35vw;
+    max-height: 600px;
     background: #ff5499; }
   .book__image figure {
     width: 80%;

@@ -25,7 +25,7 @@
 				<ul class="book__tags">
 					<?php foreach($page->tags() as $tag):?>
 						<li class="tag" data-tag="<?= urlencode($tag)?>">
-							<a href="/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
+							<a href="<?=$site->url()?>/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
 								<?= $tag?>
 							</a>
 						</li>
