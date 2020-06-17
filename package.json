@@ -30,6 +30,7 @@
     "popper.js": "^1.16.1"
   },
   "dependencies": {
+    "infinite-scroll": "^3.0.6",
     "photoswipe": "^4.1.3"
   }
 }

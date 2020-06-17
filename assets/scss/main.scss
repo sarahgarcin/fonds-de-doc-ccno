@@ -22,7 +22,7 @@
   li{list-style:none;}
   a{color: #000;text-decoration: none;}
   a:visited{color: #000;}
-  a:hover{}
+  a:hover{color: $mainColor}
   img {width: 100%;}
   figure{margin:0;}
   figcaption{
@@ -120,6 +120,34 @@
       background: #FFF; 
       padding: $marginSmall;
     }
+    .list-books__td--tags{
+      width: 20%;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+    .list-books__td{
+      &.tags{
+        width: 20%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        li{
+          display:inline-block;
+          position:relative;
+          &:after{
+            content:",";
+            position:relative;
+            left:-4px;
+          }
+          &:last-child:after{
+            content:"";
+          }
+        }
+      }
+      &.see-more{
+        width: 3%;
+        text-align: right;
+      }
+    }
     .list-books-content{
       padding-top: 45px;
       article{
@@ -129,7 +157,17 @@
           margin:0;
         }
         .fold{
-          display:none;
+          // display:none;
+          max-height:0; 
+          transition: all 0.8s ease;
+          overflow: hidden;
+        }
+        .unfold{
+          // display:block;
+          transition: all 0.8s ease;
+          overflow: hidden;
+          max-height:600px; 
+
         }
       }
     }

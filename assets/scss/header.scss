@@ -9,15 +9,41 @@ header{
 	background: $mainColor;
 	z-index: 100; 
 	align-items: center;
-	padding: $marginSmall $marginBig; 
+	padding: $marginSmall 30px $marginSmall; 
 	&.row{margin:0;}
-	a{text-decoration:none;}
+	a{
+		text-decoration:none;
+		color: #000;
+		&:hover, &:visited{
+			color: #000; 
+		}
+	}
 	h1{
 		font-size:$menuSize;
 		margin:0;
+		line-height: 0.8; 
 	}
 	.logo{
 		text-align: center; 
+	}
+	.searchbar{
+		text-align:right;
+		input[type="search"]{
+			border:none;
+			border-bottom: 1px solid #000; 
+			background: transparent;
+			font-family: $font;
+			color: #000;
+			font-size: 18px;
+			max-width: 220px;
+		}
+		input[type="submit"]{
+			background: transparent;
+			border:none;
+			font-size: 18px;
+			font-family: $font;
+			cursor: pointer;
+		}
 	}
 }
 

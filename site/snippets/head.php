@@ -16,7 +16,7 @@
 		?>
 		<form action= <?= ($p = page('search')) ? $p->url() : '' ?>>
 		  <input type="search" name="q" value="<?= html($query) ?>" placeholder="Titre, auteur, mots clés…">
-		  <input type="submit" value="Rechercher">
+		  <input type="submit" value="rechercher">
 		</form>
 			</div>
 </header>

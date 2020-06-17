@@ -28,6 +28,9 @@ a {
 a:visited {
   color: #000; }
 
+a:hover {
+  color: #ff5499; }
+
 img {
   width: 100%; }
 
@@ -94,16 +97,36 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 9px 36px; }
+  padding: 9px 30px 9px; }
   header.row {
     margin: 0; }
   header a {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #000; }
+    header a:hover, header a:visited {
+      color: #000; }
   header h1 {
     font-size: 24px;
-    margin: 0; }
+    margin: 0;
+    line-height: 0.8; }
   header .logo {
     text-align: center; }
+  header .searchbar {
+    text-align: right; }
+    header .searchbar input[type="search"] {
+      border: none;
+      border-bottom: 1px solid #000;
+      background: transparent;
+      font-family: "directrice", sans-serif;
+      color: #000;
+      font-size: 18px;
+      max-width: 220px; }
+    header .searchbar input[type="submit"] {
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      font-family: "directrice", sans-serif;
+      cursor: pointer; }
 
 .show-for-small-only {
   display: block; }
@@ -127,6 +150,29 @@ main {
   background: #FFF;
   padding: 9px; }
 
+.list-books .list-books__td--tags {
+  width: 20%;
+  padding-right: 1rem;
+  padding-left: 1rem; }
+
+.list-books .list-books__td.tags {
+  width: 20%;
+  padding-right: 1rem;
+  padding-left: 1rem; }
+  .list-books .list-books__td.tags li {
+    display: inline-block;
+    position: relative; }
+    .list-books .list-books__td.tags li:after {
+      content: ",";
+      position: relative;
+      left: -4px; }
+    .list-books .list-books__td.tags li:last-child:after {
+      content: ""; }
+
+.list-books .list-books__td.see-more {
+  width: 3%;
+  text-align: right; }
+
 .list-books .list-books-content {
   padding-top: 45px; }
   .list-books .list-books-content article {
@@ -135,7 +181,17 @@ main {
     .list-books .list-books-content article p {
       margin: 0; }
     .list-books .list-books-content article .fold {
-      display: none; }
+      max-height: 0;
+      -webkit-transition: all 0.8s ease;
+      -o-transition: all 0.8s ease;
+      transition: all 0.8s ease;
+      overflow: hidden; }
+    .list-books .list-books-content article .unfold {
+      -webkit-transition: all 0.8s ease;
+      -o-transition: all 0.8s ease;
+      transition: all 0.8s ease;
+      overflow: hidden;
+      max-height: 600px; }
 
 @media only screen and (min-width: 48em) {
   .show-for-small-only {

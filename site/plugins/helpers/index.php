@@ -17,3 +17,4 @@ function csv(string $file, string $delimiter = ','): array
 
     return $csv;
 }
+

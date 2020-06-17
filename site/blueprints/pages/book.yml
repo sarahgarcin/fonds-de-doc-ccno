@@ -1,0 +1,39 @@
+title: Livre
+preset: page
+pages: false
+
+fields:
+  author:
+    label: Auteur.trice.s 
+    type: text
+  year:
+    label: Année 
+    type: text
+  tags: 
+    label: Mots-clés
+    type: tags
+  type: 
+    label: Genre
+    type: text
+  collection: 
+    label: Collection/Série
+    type: text
+  publisher: 
+    label: Éditeur/Structure
+    type: text
+  isbn: 
+    label: ISBN
+    type: text
+  language: 
+    label: Langues
+    type: text
+  summary: 
+    label: Résumé
+    type: textarea
+  number: 
+    label: Nombre d'exemplaire
+    type: text
+
+  
+
+

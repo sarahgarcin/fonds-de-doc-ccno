@@ -1,50 +1,9 @@
 <?php snippet('header') ?>
 <?php snippet('head') ?>
 
-<?php 
-
-  $csv      = csv($page->root() . '/ccno.csv', '^');
-  $kirby->impersonate('kirby');
-  $i = 0; 
-  foreach ($csv as $book) {
-  	$pageChild = $page->children()->findBy('uid', Str::slug($book['Titre']));
-  	if(!$pageChild){
-      $newPage = page('home')->createChild([
-				'slug'     => Str::slug($book['Titre']),
-	      'template' => 'book',
-	      'model'    => 'book',
-	      'draft' => 0,
-	      'num'      => 0,
-	      'content'  => [
-          'cover'      => $book['Image'],
-          'author'     => $book['Auteur.trice'],
-          'title'      => $book['Titre'],
-          'collection' => $book['Collection / série'],
-          'publisher'  => $book['Editeur/Structure'],
-          'year'       => $book['Année'],
-          'type'       => $book['Type de document'],
-          'isbn'       => $book['ISBN'],
-          'tags'       => $book['Mots clés'],
-          'language'   => $book['Langues'],
-          'summary'    => $book['Résumé'],
-          'number'     => $book['Nombre d’exemplaire'],
-      	]
-      ])->changeStatus("listed", $i++);
-    }
-  };
-
-  // déplacer les images dans le bon dossier
-  foreach($page->children() as $book){
-  	$imageName = $book->cover();
-  	if($image = $page->image($imageName)){
-  		$image->copy($book);
-  		$image->delete();
-  	}	
-  };
-	 
-?>
-
 	<main>
+		<?php $query   = get('q');?>
+
 		<div class="list-books">
 			<div class="list-books__th list-books__th--desktop">
 				<div class="list-books__details">
@@ -67,7 +26,7 @@
 			</div>
 			<div class="list-books-content">
 				<?php 
-					$books = $page->children();
+					$books = $results;
 					// sort by category
 					$books = $books->sortBy('title');
 					if($sort = param('sort')) {
@@ -142,6 +101,7 @@
 		    <?php endforeach ?>
 	    </div>
 	  </div>
-	</main>
 	
+		
+	</main>
 <?php snippet('footer') ?>

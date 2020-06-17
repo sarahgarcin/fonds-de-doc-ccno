@@ -1,10 +1,5 @@
 title: Accueil
-preset: page
+preset: pages
 pages: false
 
-fields:
-  text:
-    label: Texte
-    type: textarea
-    size: medium
 
