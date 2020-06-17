@@ -9,7 +9,14 @@ function init(){
 	var paramTag = getUrlParameter('tag');
 
 	// ajoute la classe active quand on clique sur une catégorie
-	$('.list-books__td--'+paramSort).addClass('active');
+	if(paramSort){
+		$('.list-books__td--'+paramSort).addClass('active');
+	}
+	else{
+		$('.list-books__td--title').addClass('active');
+	}
+	
+
 
 	// ajoute la classe active quand un tag est actif
 	$('.tags > .tag[data-tag="'+paramTag+'"]').addClass('active');

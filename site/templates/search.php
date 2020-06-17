@@ -2,7 +2,7 @@
 <?php snippet('head') ?>
 
 	<main>
-		<?php $query   = get('q');?>
+		<?php $query = get('q');?>
 
 		<div class="list-books">
 			<div class="list-books__th list-books__th--desktop">
@@ -93,6 +93,15 @@
 									<p class="book__isbn"><?= $book->isbn() ?></p>
 									<p class="book__language"><?= $book->language() ?></p>
 									<p class="book__summary"><?= $book->summary() ?></p>
+									<ul class="book__tags">
+										<?php foreach($tags as $tag):?>
+											<li class="tag" data-tag="<?= urlencode($tag)?>">
+												<a href="/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
+													<?= $tag?>
+												</a>
+											</li>
+										<?php endforeach;?>
+									</ul>
 									<p class="book__number">Nombre d'exemplaire: <?= $book->number() ?></p>
 								</div>
 							</div>

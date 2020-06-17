@@ -49,7 +49,7 @@
 			<div class="list-books__th list-books__th--desktop">
 				<div class="list-books__details">
 					<div class="list-books__details__inner row">
-						<div class="list-books__td list-books__td--title col-md-4 active">
+						<div class="list-books__td list-books__td--title col-md-4">
 							<a href="/sort:title" title="Titre">Titre</a>
 						</div>
 						<div class="list-books__td list-books__td--author col-md-3">
@@ -135,7 +135,17 @@
 									<p class="book__isbn"><?= $book->isbn() ?></p>
 									<p class="book__language"><?= $book->language() ?></p>
 									<p class="book__summary"><?= $book->summary() ?></p>
+									<ul class="book__tags">
+										<?php foreach($tags as $tag):?>
+											<li class="tag" data-tag="<?= urlencode($tag)?>">
+												<a href="/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
+													<?= $tag?>
+												</a>
+											</li>
+										<?php endforeach;?>
+									</ul>
 									<p class="book__number">Nombre d'exemplaire: <?= $book->number() ?></p>
+									
 								</div>
 							</div>
 						</div>

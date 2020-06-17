@@ -14,14 +14,14 @@
     font-family: $font;
     background: $backgroundColor;
     line-height: 1.2;
-    color: rgb(41, 41, 41);
+    color: $textColor;
   }
 
   // -------------- RESET.CSS --------------
   ul, ol{margin:0; padding:0;}
   li{list-style:none;}
-  a{color: #000;text-decoration: none;}
-  a:visited{color: #000;}
+  a{color: $textColor;text-decoration: none;}
+  a:visited{color: $textColor;}
   a:hover{color: $mainColor}
   img {width: 100%;}
   figure{margin:0;}
@@ -58,7 +58,6 @@
 
 
   h4{
-    color: $rose; 
     font-weight: 700;
     margin-bottom: $marginNormal;
   }
@@ -180,34 +179,66 @@
           margin:0;
         }
         .fold{
-          // display:none;
           max-height:0; 
           transition: all 0.8s ease;
           overflow: hidden;
         }
         .unfold{
-          // display:block;
           transition: all 0.8s ease;
           overflow: hidden;
           max-height:600px; 
 
         }
+        .book{
+          padding-top: $marginNormal;
+          p, ul{
+            margin-bottom: $marginNormal;
+          }
+          .book__summary{
+            font-size: 19px;
+          }
+          .book__tags{
+            li{
+              display:inline-block;
+              position:relative;
+              font-size: 19px;
+              &.active a{
+                color: $mainColor;
+              }
+              &:after{
+                content:",";
+                position:relative;
+                left:-4px;
+              }
+              &:last-child:after{
+                content:"";
+              }
+            }
+          }
+
+        }
       }
     }
-    .book__image{
-      padding-right: 0.8rem;
-      .book__image__inner{
-        width: 100%;
-        height: 430px;
-        background: $mainColor;
-        
-      }
-      figure{
-        width: 80%;
-        margin:auto;
-        @include center;
-      }
+  }
+
+  .book__image{
+    padding-right: 0.8rem;
+    .book__image__inner{
+      width: 100%;
+      height: 430px;
+      background: $mainColor;
+      
     }
+    figure{
+      width: 80%;
+      margin:auto;
+      @include center;
+    }
+  }
+
+  .book-page{
+    margin-top: $marginBig*2;
+    width: 100%;
   }
 
 

@@ -13,9 +13,9 @@ header{
 	&.row{margin:0;}
 	a{
 		text-decoration:none;
-		color: #000;
+		color: $textColor;
 		&:hover, &:visited{
-			color: #000; 
+			color: $textColor; 
 		}
 	}
 	h1{
@@ -30,10 +30,10 @@ header{
 		text-align:right;
 		input[type="search"]{
 			border:none;
-			border-bottom: 1px solid #000; 
+			border-bottom: 1px solid $textColor; 
 			background: transparent;
 			font-family: $font;
-			color: #000;
+			color: $textColor;
 			font-size: 18px;
 			max-width: 220px;
 		}
