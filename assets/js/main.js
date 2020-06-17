@@ -18,13 +18,15 @@ function init(){
 
 	$('.list-books__details__inner').on('click', function(e){
 		var $contentToUnfold = $(this).next('.list-books__content');
-		console.log($(e.target).hasClass('tag'));
-		console.log($(e.target).attr('class'));
 		if(!$(e.target).hasClass('tag')){
 			if($contentToUnfold.hasClass('fold')){
+				console.log('unfold');
+				$('.unfold').removeClass('unfold').addClass('fold');
 				$contentToUnfold.removeClass('fold').addClass('unfold');
+
 			}
 			else{
+				console.log('fold');
 				$contentToUnfold.removeClass('unfold').addClass('fold');
 			}
 		}
