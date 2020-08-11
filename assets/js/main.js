@@ -32,6 +32,15 @@ function init(){
 				$('.unfold').removeClass('unfold').addClass('fold');
 				$contentToUnfold.removeClass('fold').addClass('unfold');
 				$(this).addClass('active');
+
+				var $this = jQuery(this);
+				setTimeout(function(){ 
+					$('html, body').animate( { scrollTop: $this.offset().top - 74 }, 500);
+				}, 1100);
+				// setTimeout(function(){
+				// 	$('html, body').animate( { scrollTop: $(this).offset().top - 100 }, 500 );
+				// }, 1000);
+				
 			}
 			else{
 				console.log('fold');
