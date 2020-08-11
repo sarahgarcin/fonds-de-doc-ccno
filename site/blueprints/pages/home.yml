@@ -1,5 +1,20 @@
 title: Accueil
-preset: pages
-pages: false
+# preset: pages
+
+
+columns:
+  left:
+    width: 2/3
+    sections:
+      pages:
+        type: pages
+        headline: Livres
+  right:
+    width: 1/3
+    sticky: true
+    sections:
+      files:
+        type: files
+        headline: Fichiers
 
 
