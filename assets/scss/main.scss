@@ -82,7 +82,7 @@
   @import "header.scss";
 
 
-  // -------------- MOBILE-FIRST GENERAL --------------
+  // -------------- GENERAL --------------
   .show-for-small-only{
   	display:block;
   }
@@ -174,14 +174,14 @@
           &.active a{
             color: $mainColor;
           }
-          &:after{
-            content:",";
-            position:relative;
-            left:-4px;
-          }
-          &:last-child:after{
-            content:"";
-          }
+          // &:after{
+          //   content:",";
+          //   position:relative;
+          //   left:-4px;
+          // }
+          // &:last-child:after{
+          //   content:"";
+          // }
         }
       }
       &.tags{
@@ -194,14 +194,14 @@
           &.active a{
             color: $mainColor;
           }
-          &:after{
-            content:",";
-            position:relative;
-            left:-4px;
-          }
-          &:last-child:after{
-            content:"";
-          }
+          // &:after{
+          //   content:",";
+          //   position:relative;
+          //   left:-4px;
+          // }
+          // &:last-child:after{
+          //   content:"";
+          // }
         }
       }
       &.see-more{
@@ -258,14 +258,14 @@
               &.active a{
                 color: $mainColor;
               }
-              &:after{
-                content:",";
-                position:relative;
-                left:-4px;
-              }
-              &:last-child:after{
-                content:"";
-              }
+              // &:after{
+              //   content:",";
+              //   position:relative;
+              //   left:-4px;
+              // }
+              // &:last-child:after{
+              //   content:"";
+              // }
             }
           }
 
@@ -319,6 +319,59 @@
     }
     .hide-for-small-only{
         display:block !important;
+    }
+  }
+
+
+  // -------------- SM GENERAL --------------
+  @media only screen and (max-width: 66em){
+    .list-books{
+      .list-books__td{
+        &.tags{
+          width: 22%;
+        }
+        &.list-books__td--tags{
+          width: 22%;
+        }
+      }
+    }
+  }
+
+
+  // -------------- SMARTPHONE GENERAL --------------
+  @media only screen and (max-width: 48em){
+    // body{background: red;}
+
+    .list-books{
+      .list-books-content{
+        article .unfold{
+          max-height:2000px;
+          .book__text{
+            margin-top: $marginNormal;
+          }
+        }
+      }
+      .list-books__td{
+        &.tags{
+          width: 100%;
+        }
+        &.see-more{
+          width: 20px;
+          position:absolute;
+          right: 1rem;
+
+        }
+      }
+    }
+    .book__image{
+      .book__image__inner{
+        height: 45vw;
+        max-height: 800px;
+      }
+      figure{
+        height: 40vw;
+        max-height: 700px;        
+      }
     }
   }
 

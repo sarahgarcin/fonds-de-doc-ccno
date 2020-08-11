@@ -123,6 +123,19 @@ header {
       font-family: "directrice", sans-serif;
       cursor: pointer; }
 
+@media only screen and (max-width: 48em) {
+  header {
+    padding-top: 18px; }
+    header .logo {
+      text-align: right; }
+    header .searchbar {
+      text-align: left;
+      margin-top: 18px; } }
+
+@media only screen and (max-width: 66em) {
+  header .searchbar input[type="search"] {
+    max-width: 100px; } }
+
 .show-for-small-only {
   display: block; }
 
@@ -181,12 +194,6 @@ main {
   position: relative; }
   .list-books .list-books__td.authors li.active a {
     color: #ff5499; }
-  .list-books .list-books__td.authors li:after {
-    content: ",";
-    position: relative;
-    left: -4px; }
-  .list-books .list-books__td.authors li:last-child:after {
-    content: ""; }
 
 .list-books .list-books__td.tags {
   width: 20%;
@@ -197,12 +204,6 @@ main {
     position: relative; }
     .list-books .list-books__td.tags li.active a {
       color: #ff5499; }
-    .list-books .list-books__td.tags li:after {
-      content: ",";
-      position: relative;
-      left: -4px; }
-    .list-books .list-books__td.tags li:last-child:after {
-      content: ""; }
 
 .list-books .list-books__td.see-more {
   width: 3%;
@@ -258,12 +259,6 @@ main {
         font-size: 19px; }
         .list-books .list-books-content article .book .book__tags li.active a {
           color: #ff5499; }
-        .list-books .list-books-content article .book .book__tags li:after {
-          content: ",";
-          position: relative;
-          left: -4px; }
-        .list-books .list-books-content article .book .book__tags li:last-child:after {
-          content: ""; }
 
 .book__image {
   padding-right: 0.8rem; }
@@ -301,3 +296,27 @@ main {
     display: none !important; }
   .hide-for-small-only {
     display: block !important; } }
+
+@media only screen and (max-width: 66em) {
+  .list-books .list-books__td.tags {
+    width: 22%; }
+  .list-books .list-books__td.list-books__td--tags {
+    width: 22%; } }
+
+@media only screen and (max-width: 48em) {
+  .list-books .list-books-content article .unfold {
+    max-height: 2000px; }
+    .list-books .list-books-content article .unfold .book__text {
+      margin-top: 18px; }
+  .list-books .list-books__td.tags {
+    width: 100%; }
+  .list-books .list-books__td.see-more {
+    width: 20px;
+    position: absolute;
+    right: 1rem; }
+  .book__image .book__image__inner {
+    height: 45vw;
+    max-height: 800px; }
+  .book__image figure {
+    height: 40vw;
+    max-height: 700px; } }

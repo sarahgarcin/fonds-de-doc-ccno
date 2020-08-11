@@ -26,6 +26,7 @@ function init(){
 	// déplier les livres - plus d'infos
 	$('.see-more').on('click', function(e){
 		var $contentToUnfold = $(this).parents('.list-books__details__inner').next('.list-books__content');
+		$('.see-more').removeClass('active');
 		// if(!$(e.target).hasClass('tag')){
 			if($contentToUnfold.hasClass('fold')){
 				console.log('unfold');
@@ -36,11 +37,7 @@ function init(){
 				var $this = jQuery(this);
 				setTimeout(function(){ 
 					$('html, body').animate( { scrollTop: $this.offset().top - 74 }, 500);
-				}, 1100);
-				// setTimeout(function(){
-				// 	$('html, body').animate( { scrollTop: $(this).offset().top - 100 }, 500 );
-				// }, 1000);
-				
+				}, 1100);				
 			}
 			else{
 				console.log('fold');

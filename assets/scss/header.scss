@@ -48,7 +48,25 @@ header{
 }
 
 
-// -------------- DESKTOP HEADER --------------
-@media only screen and (min-width: 48em){
-
+// -------------- Smartphone HEADER --------------
+@media only screen and (max-width: 48em){
+  header{
+  	padding-top: $marginNormal;
+    .logo{
+      text-align: right;
+    }
+    .searchbar{
+      text-align:left;
+      margin-top: $marginNormal;
+    }
+  }
 }
+
+ // -------------- SM GENERAL --------------
+  @media only screen and (max-width: 66em){
+    header{
+    	.searchbar input[type="search"]{
+    		max-width: 100px;
+	    }
+    }
+  }
