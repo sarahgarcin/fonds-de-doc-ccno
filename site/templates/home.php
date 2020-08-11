@@ -178,7 +178,7 @@
 										<p class="book__language">Langue&thinsp;: <?= $book->language() ?></p>
 									<?php endif; ?>
 									<?php if($book->summary()->isNotEmpty()):?>
-										<p class="book__summary"><span style="font-size: 21px;">Résumé&thinsp;:</span> <br><?= $book->summary() ?></p>
+										<div class="book__summary"><span style="font-size: 21px;">Résumé&thinsp;:</span> <br><?= $book->summary()->kt() ?></div>
 									<?php endif; ?>
 									<?php if($book->tags()->isNotEmpty()):?>
 										<ul class="book__tags">

@@ -251,7 +251,7 @@ main {
       padding-top: 18px; }
       .list-books .list-books-content article .book p, .list-books .list-books-content article .book ul {
         margin-bottom: 18px; }
-      .list-books .list-books-content article .book .book__summary {
+      .list-books .list-books-content article .book .book__summary p {
         font-size: 19px; }
       .list-books .list-books-content article .book .book__tags li {
         display: inline-block;
@@ -285,7 +285,11 @@ main {
 
 .book-page {
   margin-top: 72px;
-  width: 100%; }
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+  .book-page .book__summary p:first-child {
+    margin-top: 0; }
 
 .download-csv a {
   border: 1px solid #ff5499;

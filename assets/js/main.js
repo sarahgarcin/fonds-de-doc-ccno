@@ -36,7 +36,7 @@ function init(){
 
 				var $this = jQuery(this);
 				setTimeout(function(){ 
-					$('html, body').animate( { scrollTop: $this.offset().top - 74 }, 500);
+					$('html, body').animate( { scrollTop: $this.offset().top - 80 }, 500);
 				}, 1100);				
 			}
 			else{
