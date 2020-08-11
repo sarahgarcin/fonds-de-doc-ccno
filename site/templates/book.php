@@ -24,10 +24,11 @@
 				<div class="book__summary">Résumé&thinsp;:<?= $page->summary()->kt() ?></div>
 				<ul class="book__tags">
 					Mots-clés&thinsp;:<br> 
-					<?php foreach($page->tags() as $tag):?>
+					<?php $tags = Str::split($page->tags(), ',');?>
+					<?php foreach($tags as $tag):?>
 						<li class="tag" data-tag="<?= urlencode($tag)?>">
 							<a href="<?=$site->url()?>/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
-								<?= $tag?>
+								<?= $tag?><?php if(count($tags) > 1): echo ','; endif;?>
 							</a>
 						</li>
 					<?php endforeach;?>

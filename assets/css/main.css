@@ -290,6 +290,9 @@ main {
   margin-right: auto; }
   .book-page .book__summary p:first-child {
     margin-top: 0; }
+  .book-page .book__tags li {
+    display: inline-block;
+    position: relative; }
 
 .download-csv a {
   border: 1px solid #ff5499;

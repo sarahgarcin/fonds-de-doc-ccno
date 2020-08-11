@@ -309,6 +309,12 @@
         margin-top:0;
       }
     }
+    .book__tags{
+      li{
+        display:inline-block;
+        position:relative;
+      }
+    }
   }
 
   .download-csv{
