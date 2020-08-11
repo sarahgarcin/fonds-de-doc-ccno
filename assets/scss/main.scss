@@ -284,9 +284,18 @@
       
     }
     figure{
-      width: 80%;
-      margin:auto;
+      // width: 80%;
+      // margin:auto;
+      width: 100%;
+      height: 30vw;
+      max-height: 500px;
       @include center;
+      img{
+        object-fit: contain;
+        height: 100%; 
+        width:100%;
+      }
+      
     }
   }
 
