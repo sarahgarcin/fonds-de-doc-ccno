@@ -5,7 +5,7 @@ pages: false
 fields:
   author:
     label: Auteur.trice.s 
-    type: text
+    type: tags
   year:
     label: Année 
     type: text

@@ -9,7 +9,7 @@ header{
 	background: $mainColor;
 	z-index: 100; 
 	align-items: center;
-	padding: $marginSmall 30px $marginSmall; 
+	padding: $marginSmall 0px $marginSmall; 
 	&.row{margin:0;}
 	a{
 		text-decoration:none;
@@ -19,7 +19,7 @@ header{
 		}
 	}
 	h1{
-		font-size:$menuSize;
+		font-size:17px;
 		margin:0;
 		line-height: 0.8; 
 	}
@@ -34,13 +34,13 @@ header{
 			background: transparent;
 			font-family: $font;
 			color: $textColor;
-			font-size: 18px;
+			font-size: 17px;
 			max-width: 220px;
 		}
 		input[type="submit"]{
 			background: transparent;
 			border:none;
-			font-size: 18px;
+			font-size: 17px;
 			font-family: $font;
 			cursor: pointer;
 		}

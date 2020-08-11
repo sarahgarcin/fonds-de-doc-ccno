@@ -93,7 +93,7 @@
 
 
   main{
-    padding: 43px $marginBig; 
+    padding: 43px 0; 
     font-size: $textSize;
     margin-bottom: 200px;
     width: 100%;
@@ -109,20 +109,40 @@
       border-bottom: 2px solid $mainColor;
       position: fixed; 
       z-index: 99;
-      width: calc(100% - calc(36px*2));
+      width: 100%;
+      // width: calc(100% - calc(36px*2));
       background: #FFF; 
-      padding: $marginSmall;
-      max-width: calc(1500px - calc(36px*2));
+      padding: $marginSmall $marginNormal;
+      max-width: 100%;
+      // max-width: calc(1500px - calc(36px*2));
       .list-books__td{
         padding-left: 5px;
+
         > a{
           color: $mainColor;
           &:before{
+            margin-right: 2px;
+            position:relative;
+            bottom:2px;
+            opacity: 0.3;
+          }
+        }
+        &.asc{
+          > a:before{
             content:"↑";
             margin-right: 2px;
             position:relative;
             bottom:2px;
-            opacity: 0.5;
+            opacity: 0.3;
+          }
+        }
+        &.desc{
+          > a:before{
+            content:"↓";
+            margin-right: 2px;
+            position:relative;
+            bottom:2px;
+            opacity: 0.3;
           }
         }
         &.active{
@@ -134,18 +154,35 @@
     }
 
     .list-books__details__inner{
-      cursor: pointer;
-      &:hover{
-        &:not(.tags){
-          color:$mainColor;
-        }
-      }
+      // cursor: pointer;
+      // &:hover{
+      //   &:not(.tags){
+      //     color:$mainColor;
+      //   }
+      // }
     }
     .list-books__td{
       &.list-books__td--tags{
         width: 20%;
         padding-right: 1rem;
         padding-left: 1rem;
+      }
+      &.authors{
+        li{
+          display:inline-block;
+          position:relative;
+          &.active a{
+            color: $mainColor;
+          }
+          &:after{
+            content:",";
+            position:relative;
+            left:-4px;
+          }
+          &:last-child:after{
+            content:"";
+          }
+        }
       }
       &.tags{
         width: 20%;
@@ -170,13 +207,27 @@
       &.see-more{
         width: 3%;
         text-align: right;
+        font-size: 30px;
+        margin-top: -9px;
+        cursor: pointer;
+        transition: all 0.3s linear;
+       
+        &:hover{
+          color: $mainColor;
+        }
+        &.active{
+          color: $mainColor; 
+          transition: all 0.3s linear;
+          transform: rotate(45deg);
+          transform-origin: 85% 30%;
+        }
       }
     }
     .list-books-content{
       padding-top: 45px;
       article{
         border-bottom: 1px solid $mainColor;
-        padding: $marginSmall;
+        padding: $marginNormal;
         p{
           margin:0;
         }
@@ -242,6 +293,13 @@
   .book-page{
     margin-top: $marginBig*2;
     width: 100%;
+  }
+
+  .download-csv{
+    a{
+      border: 1px solid $mainColor; 
+      padding: $marginSmall $marginNormal;
+    }
   }
 
 

@@ -21,22 +21,25 @@ function init(){
 	// ajoute la classe active quand un tag est actif
 	$('.tags > .tag[data-tag="'+paramTag+'"]').addClass('active');
 
-	// il faudrait ajouter une fonction qui va chercher un nouveau parametre "order" dans l'url et qui détermine si l'odre est ascendant ou descendant
+	// il faudrait ajouter une fonction qui va chercher un nouveau parametre "order" dans l'url et qui détermine si l'ordre est ascendant ou descendant
 
-	$('.list-books__details__inner').on('click', function(e){
-		var $contentToUnfold = $(this).next('.list-books__content');
-		if(!$(e.target).hasClass('tag')){
+	// déplier les livres - plus d'infos
+	$('.see-more').on('click', function(e){
+		var $contentToUnfold = $(this).parents('.list-books__details__inner').next('.list-books__content');
+		// if(!$(e.target).hasClass('tag')){
 			if($contentToUnfold.hasClass('fold')){
 				console.log('unfold');
 				$('.unfold').removeClass('unfold').addClass('fold');
 				$contentToUnfold.removeClass('fold').addClass('unfold');
-
+				$(this).addClass('active');
 			}
 			else{
 				console.log('fold');
 				$contentToUnfold.removeClass('unfold').addClass('fold');
+				$(this).removeClass('active');
+				
 			}
-		}
+		// }
 	});
 
 

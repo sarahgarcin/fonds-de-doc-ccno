@@ -92,7 +92,7 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 9px 30px 9px; }
+  padding: 9px 0px 9px; }
   header.row {
     margin: 0; }
   header a {
@@ -101,7 +101,7 @@ header {
     header a:hover, header a:visited {
       color: #292929; }
   header h1 {
-    font-size: 24px;
+    font-size: 17px;
     margin: 0;
     line-height: 0.8; }
   header .logo {
@@ -114,12 +114,12 @@ header {
       background: transparent;
       font-family: "directrice", sans-serif;
       color: #292929;
-      font-size: 18px;
+      font-size: 17px;
       max-width: 220px; }
     header .searchbar input[type="submit"] {
       background: transparent;
       border: none;
-      font-size: 18px;
+      font-size: 17px;
       font-family: "directrice", sans-serif;
       cursor: pointer; }
 
@@ -130,7 +130,7 @@ header {
   display: none; }
 
 main {
-  padding: 43px 36px;
+  padding: 43px 0;
   font-size: 21px;
   margin-bottom: 200px;
   width: 100%;
@@ -143,32 +143,50 @@ main {
   border-bottom: 2px solid #ff5499;
   position: fixed;
   z-index: 99;
-  width: calc(100% - calc(36px*2));
+  width: 100%;
   background: #FFF;
-  padding: 9px;
-  max-width: calc(1500px - calc(36px*2)); }
+  padding: 9px 18px;
+  max-width: 100%; }
   .list-books .list-books__th .list-books__td {
     padding-left: 5px; }
     .list-books .list-books__th .list-books__td > a {
       color: #ff5499; }
       .list-books .list-books__th .list-books__td > a:before {
-        content: "↑";
         margin-right: 2px;
         position: relative;
         bottom: 2px;
-        opacity: 0.5; }
+        opacity: 0.3; }
+    .list-books .list-books__th .list-books__td.asc > a:before {
+      content: "↑";
+      margin-right: 2px;
+      position: relative;
+      bottom: 2px;
+      opacity: 0.3; }
+    .list-books .list-books__th .list-books__td.desc > a:before {
+      content: "↓";
+      margin-right: 2px;
+      position: relative;
+      bottom: 2px;
+      opacity: 0.3; }
     .list-books .list-books__th .list-books__td.active a:before {
       opacity: 1; }
-
-.list-books .list-books__details__inner {
-  cursor: pointer; }
-  .list-books .list-books__details__inner:hover:not(.tags) {
-    color: #ff5499; }
 
 .list-books .list-books__td.list-books__td--tags {
   width: 20%;
   padding-right: 1rem;
   padding-left: 1rem; }
+
+.list-books .list-books__td.authors li {
+  display: inline-block;
+  position: relative; }
+  .list-books .list-books__td.authors li.active a {
+    color: #ff5499; }
+  .list-books .list-books__td.authors li:after {
+    content: ",";
+    position: relative;
+    left: -4px; }
+  .list-books .list-books__td.authors li:last-child:after {
+    content: ""; }
 
 .list-books .list-books__td.tags {
   width: 20%;
@@ -188,13 +206,32 @@ main {
 
 .list-books .list-books__td.see-more {
   width: 3%;
-  text-align: right; }
+  text-align: right;
+  font-size: 30px;
+  margin-top: -9px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+  .list-books .list-books__td.see-more:hover {
+    color: #ff5499; }
+  .list-books .list-books__td.see-more.active {
+    color: #ff5499;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 85% 30%;
+    -ms-transform-origin: 85% 30%;
+    transform-origin: 85% 30%; }
 
 .list-books .list-books-content {
   padding-top: 45px; }
   .list-books .list-books-content article {
     border-bottom: 1px solid #ff5499;
-    padding: 9px; }
+    padding: 18px; }
     .list-books .list-books-content article p {
       margin: 0; }
     .list-books .list-books-content article .fold {
@@ -248,6 +285,10 @@ main {
 .book-page {
   margin-top: 72px;
   width: 100%; }
+
+.download-csv a {
+  border: 1px solid #ff5499;
+  padding: 9px 18px; }
 
 @media only screen and (min-width: 48em) {
   .show-for-small-only {

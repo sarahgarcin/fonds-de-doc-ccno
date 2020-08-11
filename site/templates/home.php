@@ -45,22 +45,41 @@
 ?>
 
 	<main>
+
 		<div class="list-books">
 			<div class="list-books__th list-books__th--desktop">
 				<div class="list-books__details">
 					<div class="list-books__details__inner row">
-						<div class="list-books__td list-books__td--title col-md-4">
-							<a href="<?=$site->url()?>/sort:title" title="Titre">Titre</a>
+						<div class="list-books__td list-books__td--title <?php e(param('order') == 'desc' && param('sort') == "title", "desc", "asc")?> col-md-4">
+							<?php if(param('order') == 'asc' && param('sort') == "title"):?>
+								<a href="<?=$site->url()?>/sort:title/order:desc" title="Titre">Titre</a>
+							<?php elseif(param('sort') == null):?>
+								<a href="<?=$site->url()?>/sort:title/order:desc" title="Titre">Titre</a>
+							<?php else:?>
+								<a href="<?=$site->url()?>/sort:title/order:asc" title="Titre">Titre</a>
+							<?php endif; ?>
 						</div>
-						<div class="list-books__td list-books__td--author col-md-3">
-							<a href="<?=$site->url()?>/sort:author" title="Auteur">Auteur.trice.s</a>
+						<div class="list-books__td list-books__td--author <?php e(param('order') == 'desc' && param('sort') == "author", "desc", "asc")?> col-md-3">
+							<?php if(param('order') == 'asc' && param('sort') == "author"):?>
+								<a href="<?=$site->url()?>/sort:author/order:desc" title="Auteur">Auteur.trice.s</a>
+							<?php else:?>
+								<a href="<?=$site->url()?>/sort:author/order:asc" title="Auteur">Auteur.trice.s</a>
+							<?php endif; ?>
 						</div>
-						<div class="list-books__td list-books__td--year col-md-1">
-							<a href="<?=$site->url()?>/sort:year" title="Année">Année</a>
+						<div class="list-books__td list-books__td--year <?php e(param('order') == 'desc' && param('sort') == "year", "desc", "asc")?> col-md-1">
+							<?php if(param('order') == 'asc' && param('sort') == "year"):?>
+								<a href="<?=$site->url()?>/sort:year/order:desc" title="Année">Année</a>
+								<?php else:?>
+									<a href="<?=$site->url()?>/sort:year/order:asc" title="Année">Année</a>
+								<?php endif; ?>
 						</div>
 						<div class="list-books__td list-books__td--tags">Mots-clés</div>
-						<div class="list-books__td list-books__td--type col-md-1">
-							<a href="<?=$site->url()?>/sort:type" title="Genre">Genre</a>
+						<div class="list-books__td list-books__td--type <?php e(param('order') == 'desc' && param('sort') == "type", "desc", "asc")?> col-md-1">
+							<?php if(param('order') == 'asc' && param('sort') == "type"):?>
+								<a href="<?=$site->url()?>/sort:type/order:desc" title="Genre">Genre</a>
+							<?php else:?>
+								<a href="<?=$site->url()?>/sort:type/order:asc" title="Genre">Genre</a>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
@@ -72,12 +91,23 @@
 					// sort by category
 					$books = $books->sortBy('title');
 					if($sort = param('sort')) {
-  					$books = $books->sortBy($sort);
+						if(param('order') == 'asc'){
+  						$books = $books->sortBy($sort, 'asc');
+  					}
+  					else{
+							$books = $books->sortBy($sort, 'desc');
+						}	
 					}
+					
 
 					// filtrer par tag
 					if($filter = param('tag')) {
   					$books = $books->filterBy('tags', urldecode($filter), ',');
+					}
+
+					// filtrer par auteurs
+					if($filter = param('author')) {
+  					$books = $books->filterBy('author', urldecode($filter), ',');
 					}
 				?>
 		    <?php foreach ($books as $book): ?>
@@ -89,9 +119,16 @@
 									<?= $book->title() ?>
 								</h3>
 							</div>
-							<p class="list-books__td col-md-3">
-									<?= $book->author() ?>	
-							</p>
+							<?php $authors = Str::split($book->author(), ',');?>
+							<ul class="list-books__td col-md-3 authors">
+								<?php foreach($authors as $author):?>
+									<li class="author" data-tag="<?= urlencode($author)?>">
+										<a href="<?=$site->url()?>/author:<?= urlencode($author)?>" class="author" title="<?= $author?>">
+											<?= $author?>
+										</a>
+									</li>
+								<?php endforeach;?>
+							</ul>
 							<p class="list-books__td col-md-1">
 									<?= $book->year() ?>
 								</p>
@@ -113,10 +150,8 @@
 								<?= $book->type() ?>
 							</p>
 							<p class="list-books__td see-more">
-								+
+								<span class="plus">+</span>
 							</p>
-							
-							<div class="list-books__icon"></div>
 						</div>
 						<div class="list-books__content fold">
 							<div class="book row">
