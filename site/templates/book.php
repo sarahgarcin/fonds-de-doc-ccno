@@ -1,5 +1,7 @@
 <?php snippet('header') ?>
 <?php snippet('head') ?>
+<?php snippet('infos') ?>
+<?php snippet('emprunter') ?>
 
 	<main>
 		<article class="book book-page row">

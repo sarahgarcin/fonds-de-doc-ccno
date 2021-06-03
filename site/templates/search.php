@@ -1,42 +1,80 @@
 <?php snippet('header') ?>
 <?php snippet('head') ?>
+<?php snippet('infos') ?>
+<?php snippet('emprunter') ?>
 
 	<main>
 		<?php $query = get('q');?>
-
 		<div class="list-books">
-			<div class="list-books__th list-books__th--desktop hide-for-small-only">
+			<!-- <div class="list-books__th list-books__th--desktop hide-for-small-only">
 				<div class="list-books__details">
 					<div class="list-books__details__inner row">
 						<div class="list-books__td list-books__td--title <?php e(param('order') == 'desc' && param('sort') == "title", "desc", "asc")?> col-sm-3 col-md-4">
 							<?php if(param('order') == 'asc' && param('sort') == "title"):?>
-								<a href="<?=$site->url()?>/search?q=<?=$query?>/sort:title/order:desc" title="Titre">Titre</a>
+								<a href="<?=$site->url()?>/search?q=<?=$query?>&sort:title/order:desc" title="Titre">Titre</a>
 							<?php elseif(param('sort') == null):?>
-								<a href="<?=$site->url()?>/search?q=<?=$query?>/sort:title/order:desc" title="Titre">Titre</a>
+								<a href="<?=$site->url()?>/search?q=<?=$query?>&sort:title/order:desc" title="Titre">Titre</a>
 							<?php else:?>
-								<a href="<?=$site->url()?>/search?q=<?=$query?>/sort:title/order:asc" title="Titre">Titre</a>
+								<a href="<?=$site->url()?>/search?q=<?=$query?>&sort:title/order:asc" title="Titre">Titre</a>
 							<?php endif; ?>
 						</div>
 						<div class="list-books__td list-books__td--author <?php e(param('order') == 'desc' && param('sort') == "author", "desc", "asc")?> col-sm-3">
 							<?php if(param('order') == 'asc' && param('sort') == "author"):?>
-								<a href="<?=$site->url()?>/sort:author/order:desc" title="Auteur">Auteur.trice.s</a>
+								<a href="<?=$site->url()?>&sort:author/order:desc" title="Auteur">Auteur.trice.s</a>
 							<?php else:?>
-								<a href="<?=$site->url()?>/sort:author/order:asc" title="Auteur">Auteur.trice.s</a>
+								<a href="<?=$site->url()?>&sort:author/order:asc" title="Auteur">Auteur.trice.s</a>
 							<?php endif; ?>
 						</div>
 						<div class="list-books__td list-books__td--year <?php e(param('order') == 'desc' && param('sort') == "year", "desc", "asc")?> col-sm-1">
 							<?php if(param('order') == 'asc' && param('sort') == "year"):?>
-								<a href="<?=$site->url()?>/sort:year/order:desc" title="Année">Année</a>
+								<a href="<?=$site->url()?>&sort:year/order:desc" title="Année">Année</a>
 								<?php else:?>
-									<a href="<?=$site->url()?>/sort:year/order:asc" title="Année">Année</a>
+									<a href="<?=$site->url()?>&sort:year/order:asc" title="Année">Année</a>
 								<?php endif; ?>
 						</div>
 						<div class="list-books__td list-books__td--tags">Mots-clés</div>
 						<div class="list-books__td list-books__td--type <?php e(param('order') == 'desc' && param('sort') == "type", "desc", "asc")?> col-sm-1">
 							<?php if(param('order') == 'asc' && param('sort') == "type"):?>
-								<a href="<?=$site->url()?>/sort:type/order:desc" title="Genre">Genre</a>
+								<a href="<?=$site->url()?>&sort:type/order:desc" title="Genre">Genre</a>
 							<?php else:?>
-								<a href="<?=$site->url()?>/sort:type/order:asc" title="Genre">Genre</a>
+								<a href="<?=$site->url()?>&sort:type/order:asc" title="Genre">Genre</a>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div class="list-books__th list-books__th--desktop hide-for-small-only">
+				<div class="list-books__details">
+					<div class="list-books__details__inner row">
+						<div class="list-books__td list-books__td--title <?php e(param('order') == 'desc' && param('sort') == "title", "desc", "asc")?> col-sm-3 col-md-4">
+							<?php if(param('order') == 'asc' && param('sort') == "title"):?>
+								<a href="<?=$site->url()?>/sort:title/order:desc/search?q=<?=$query?>" title="Titre">Titre</a>
+							<?php elseif(param('sort') == null):?>
+								<a href="<?=$site->url()?>/sort:title/order:desc/search?q=<?=$query?>" title="Titre">Titre</a>
+							<?php else:?>
+								<a href="<?=$site->url()?>/sort:title/order:asc/search?q=<?=$query?>" title="Titre">Titre</a>
+							<?php endif; ?>
+						</div>
+						<div class="list-books__td list-books__td--author <?php e(param('order') == 'desc' && param('sort') == "author", "desc", "asc")?> col-sm-3">
+							<?php if(param('order') == 'asc' && param('sort') == "author"):?>
+								<a href="<?=$site->url()?>/sort:author/order:desc/search?q=<?=$query?>" title="Auteur">Auteur.trice.s</a>
+							<?php else:?>
+								<a href="<?=$site->url()?>/sort:author/order:asc/search?q=<?=$query?>" title="Auteur">Auteur.trice.s</a>
+							<?php endif; ?>
+						</div>
+						<div class="list-books__td list-books__td--year <?php e(param('order') == 'desc' && param('sort') == "year", "desc", "asc")?> col-sm-1">
+							<?php if(param('order') == 'asc' && param('sort') == "year"):?>
+								<a href="<?=$site->url()?>/sort:year/order:desc/search?q=<?=$query?>" title="Année">Année</a>
+								<?php else:?>
+									<a href="<?=$site->url()?>/sort:year/order:asc/search?q=<?=$query?>" title="Année">Année</a>
+								<?php endif; ?>
+						</div>
+						<div class="list-books__td list-books__td--tags">Mots-clés</div>
+						<div class="list-books__td list-books__td--type <?php e(param('order') == 'desc' && param('sort') == "type", "desc", "asc")?> col-sm-1">
+							<?php if(param('order') == 'asc' && param('sort') == "type"):?>
+								<a href="<?=$site->url()?>/sort:type/order:desc/search?q=<?=$query?>" title="Genre">Genre</a>
+							<?php else:?>
+								<a href="<?=$site->url()?>/sort:type/order:asc/search?q=<?=$query?>" title="Genre">Genre</a>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -48,19 +86,20 @@
 					// sort by category
 					$books = $books->sortBy('title');
 					if($sort = param('sort')) {
-  					$books = $books->sortBy($sort);
+						if(param('order') == 'asc'){
+  						$books = $books->sortBy($sort, 'asc');
+  					}
+  					else{
+							$books = $books->sortBy($sort, 'desc');
+						}	
 					}
-
-					// filtrer par tag
-					if($filter = param('tag')) {
-  					$books = $books->filterBy('tags', urldecode($filter), ',');
-					}
+					
 				?>
 		    <?php foreach ($books as $book): ?>
 
 			    <article>
 			    	<div class="list-books__details__inner row">
-							<div class="list-books__td list-books__td--title col-md-4">
+							<div class="list-books__td list-books__td--title col-xs-12 col-sm-3 col-md-4">
 								<h3>
 									<?= $book->title() ?>
 								</h3>
@@ -78,7 +117,7 @@
 									</li>
 								<?php endforeach;?>
 							</ul>
-							<p class="list-books__td col-md-1">
+							<p class="list-books__td col-sm-1 col-xs-12">
 									<?= $book->year() ?>
 								</p>
 							<?php 
@@ -98,7 +137,7 @@
 								<?php endforeach;?>
 							</ul>
 							
-							<p class="list-books__td col-md-1">
+							<p class="list-books__td col-sm-1 col-xs-12">
 								<?= $book->type() ?>
 							</p>
 							<p class="list-books__td see-more">
@@ -109,7 +148,7 @@
 						</div>
 						<div class="list-books__content fold">
 							<div class="book row">
-								<div class="book__image col-md-4">
+								<div class="book__image col-sm-4 col-xs-6">
 									<?php if($book->hasImages()):?>
 										<div class="book__image__inner">
 											<figure>
@@ -118,7 +157,7 @@
 										</div>
 									<?php endif;?>
 								</div>
-								<div class="book__text col-md-8">
+								<div class="book__text col-sm-8 col-xs-12">
 									<p class="book__collection"><?= $book->collection() ?></p>
 									<p class="book__publisher"><?= $book->publisher() ?></p>
 									<p class="book__isbn"><?= $book->isbn() ?></p>

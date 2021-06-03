@@ -23,7 +23,7 @@
 		$query   = get('q');
 		?>
 		<form action= <?= ($p = page('search')) ? $p->url() : '' ?>>
-		  <input type="search" name="q" value="<?= html($query) ?>" placeholder="titre, auteur, mots-clés…">
+		  <input type="search" name="q" value="<?= html($query) ?>" placeholder="titre, auteur, mots-clés…" required>
 		  <input type="submit" value="rechercher">
 		</form>
 			</div>

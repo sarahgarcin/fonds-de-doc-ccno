@@ -1,5 +1,7 @@
 <?php snippet('header') ?>
 <?php snippet('head') ?>
+<?php snippet('infos') ?>
+<?php snippet('emprunter') ?>
 
 <?php 
 	// open the file "demosaved.csv" for writing
