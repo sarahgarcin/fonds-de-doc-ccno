@@ -5,6 +5,23 @@ $(document).ready(function(){
 
 function init(){
 
+	// lazy loading on the list (really simple solution)
+	$(".list-books-content article").slice(20).hide();
+    
+    var mincount = 20;
+		var maxcount = 40;
+
+
+		$(window).scroll(function() {
+		  if($(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
+		    $(".list-books-content article").slice(mincount,maxcount).fadeIn(1200);
+		                        
+				mincount = mincount+20;
+				maxcount = maxcount+20
+
+			}
+		});
+
 
 	// fenêtres d'informations
 	$('.infos').on('click', function(){
