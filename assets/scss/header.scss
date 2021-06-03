@@ -73,26 +73,31 @@ header{
 	}
 }
 
+ // -------------- SM GENERAL --------------
+  @media only screen and (max-width: 66em){
+    header{
+    	.searchbar input[type="search"]{
+
+    		max-width: 100px;
+	    }
+    }
+  }
+
 
 // -------------- Smartphone HEADER --------------
 @media only screen and (max-width: 48em){
   header{
   	padding-top: $marginNormal;
-    .logo{
-      text-align: right;
-    }
+    // .logo{
+    //   text-align: right;
+    // }
     .searchbar{
       text-align:left;
       margin-top: $marginNormal;
     }
+    .searchbar input[type="search"]{
+    	max-width: 180px;
+	  }
   }
 }
 
- // -------------- SM GENERAL --------------
-  @media only screen and (max-width: 66em){
-    header{
-    	.searchbar input[type="search"]{
-    		max-width: 100px;
-	    }
-    }
-  }

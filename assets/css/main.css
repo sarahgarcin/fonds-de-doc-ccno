@@ -148,18 +148,18 @@ header {
       font-family: "directrice", sans-serif;
       cursor: pointer; }
 
-@media only screen and (max-width: 48em) {
-  header {
-    padding-top: 18px; }
-    header .logo {
-      text-align: right; }
-    header .searchbar {
-      text-align: left;
-      margin-top: 18px; } }
-
 @media only screen and (max-width: 66em) {
   header .searchbar input[type="search"] {
     max-width: 100px; } }
+
+@media only screen and (max-width: 48em) {
+  header {
+    padding-top: 18px; }
+    header .searchbar {
+      text-align: left;
+      margin-top: 18px; }
+    header .searchbar input[type="search"] {
+      max-width: 180px; } }
 
 .overlay {
   width: 100%;

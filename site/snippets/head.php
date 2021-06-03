@@ -10,11 +10,12 @@
 		</a>
 	</div>
 
-	<div class="infos-menu col-xs-6 col-sm-4">
+	<div class="infos-menu col-xs-6 col-sm-4 col-xs-end">
 
 		<ul>
 			<li class="infos"><span>?</span></li>
-			<li class="emprunter"><span>Consulter / Emprunter</span></li>
+			<li class="emprunter hide-for-small-only"><span>Consulter / Emprunter</span></li>
+			<li class="emprunter show-for-small-only"><span>Modalités</span></li>
 		</ul>
 	</div>
 

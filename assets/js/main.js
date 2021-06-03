@@ -11,7 +11,6 @@ function init(){
     var mincount = 20;
 		var maxcount = 40;
 
-
 		$(window).scroll(function() {
 		  if($(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
 		    $(".list-books-content article").slice(mincount,maxcount).fadeIn(1200);
