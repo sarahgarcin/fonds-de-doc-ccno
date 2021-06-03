@@ -44,7 +44,10 @@
     font-size: 30px;
     font-weight: 400;
     line-height: 1.2;
+    margin-bottom: 0;
   }
+
+  h2 + p { margin-top:0;}
 
   h2 + ul{
     margin-top: $marginNormal;
@@ -81,6 +84,35 @@
   // -------------- IMPORT TEMPlATES STYLES --------------
   @import "header.scss";
 
+  // -------------- OVERLAY --------------
+  .overlay{
+    width: 100%; 
+    height: 100vh;
+    background: rgba(0,0,0, 0.8);
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    z-index: 999;
+    display:none;
+    .popup-content{
+      position: relative;
+      background: #FFF; 
+      width: 50%;
+      max-height: 90vh;
+      margin: auto;
+      margin-top: 43px;
+      padding: $marginNormal $marginBig;
+      border: 2px solid $mainColor;
+      .close-window{
+        color: $mainColor; 
+        position: absolute; 
+        top: 5px; 
+        right: 15px; 
+        font-size: 25px; 
+        cursor: pointer;
+      }
+    }
+  }
 
   // -------------- GENERAL --------------
   .show-for-small-only{
@@ -102,6 +134,10 @@
     position: relative;
 
   } 
+
+  .comma {
+    margin-left: -3px;
+  }
 
   .list-books{
     .list-books__th{
@@ -160,6 +196,18 @@
       //     color:$mainColor;
       //   }
       // }
+      &.active{
+        .list-books__td--title{
+          color: $mainColor; 
+        }
+        .see-more{
+          color: $mainColor; 
+          transition: all 0.3s linear;
+          transform: rotate(45deg);
+          transform-origin: 85% 30%;
+        }
+      }
+
     }
     .list-books__td{
       &.list-books__td--tags{
@@ -204,6 +252,12 @@
           // }
         }
       }
+      &.list-books__td--title{
+        cursor: pointer;
+        &:hover{
+          color: $mainColor;
+        }
+      }
       &.see-more{
         width: 3%;
         text-align: right;
@@ -214,12 +268,6 @@
        
         &:hover{
           color: $mainColor;
-        }
-        &.active{
-          color: $mainColor; 
-          transition: all 0.3s linear;
-          transform: rotate(45deg);
-          transform-origin: 85% 30%;
         }
       }
     }

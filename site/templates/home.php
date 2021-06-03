@@ -1,5 +1,7 @@
 <?php snippet('header') ?>
 <?php snippet('head') ?>
+<?php snippet('infos') ?>
+<?php snippet('emprunter') ?>
 
 <?php 
 
@@ -121,11 +123,14 @@
 							</div>
 							<?php $authors = Str::split($book->author(), ',');?>
 							<ul class="list-books__td col-sm-3 col-xs-12 authors">
-								<?php foreach($authors as $author):?>
-									<li class="author" data-tag="<?= urlencode($author)?>">
+								<?php foreach($authors as $key => $author):?>
+									<li class="author" data-tag="<?= str_replace(" ", "+", $author)?>">
 										<a href="<?=$site->url()?>/author:<?= urlencode($author)?>" class="author" title="<?= $author?>">
-											<?= $author?><?php if(count($authors) > 1): echo ','; endif;?>
+											<?= $author?>
 										</a>
+										<?php if(count($authors) > 1 && (count($authors)-1) != $key): 
+												echo '<span class="comma">,</span>';  
+											endif;?>
 									</li>
 								<?php endforeach;?>
 							</ul>
@@ -137,12 +142,16 @@
 								$fiveTags = array_slice($tags, 0, 5)
 							?>
 							<ul class="list-books__td tags">
-								<?php foreach($fiveTags as $tag):?>
-									<li class="tag" data-tag="<?= urlencode($tag)?>">
+								<?php foreach($fiveTags as $key => $tag):?>
+									<li class="tag" data-tag="<?= str_replace(" ", "+", $tag)?>">
 										<a href="<?=$site->url()?>/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
-											<?= $tag?><?php if(count($tags) > 1): echo ','; endif;?>
+											<?=$tag?>
 										</a>
+										<?php if(count($tags) > 1 && (count($tags)-1) != $key): 
+										echo '<span class="comma">,</span>'; 
+									endif;?>
 									</li>
+									
 								<?php endforeach;?>
 							</ul>
 							
@@ -184,7 +193,7 @@
 										<ul class="book__tags">
 											Mots-clés&thinsp;: <br>
 											<?php foreach($tags as $tag):?>
-												<li class="tag" data-tag="<?= urlencode($tag)?>">
+												<li class="tag" data-tag="<?= str_replace(" ", "+", $tag)?>">
 													<a href="<?=$site->url()?>/tag:<?= urlencode($tag)?>" class="tag" title="<?= $tag?>">
 														<?= $tag?><?php if(count($tags) > 1): echo ','; endif;?>
 													</a>

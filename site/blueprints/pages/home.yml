@@ -13,8 +13,14 @@ columns:
     width: 1/3
     sticky: true
     sections:
-      files:
-        type: files
-        headline: Fichiers
+      textinfos: 
+        type: fields
+        fields: 
+          infos: 
+            label: Texte à propos
+            type: textarea
+          emprunter: 
+            label: Texte Consulter / Emprunter
+            type : textarea
 
 

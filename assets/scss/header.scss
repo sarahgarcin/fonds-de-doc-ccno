@@ -23,8 +23,34 @@ header{
 		margin:0;
 		line-height: 0.8; 
 	}
-	.logo{
-		text-align: center; 
+	.infos-menu{
+		font-size:17px;
+		ul{
+			display: flex;
+			.infos{
+				cursor: pointer;
+				margin-right: $marginSmall; 
+				span{
+					border: 1px solid #000;
+					padding: 5px 7px 2px 10px; 
+					border-radius: 50%;
+					&:hover{
+						background: #FFF;
+					}
+				}
+			}
+			.emprunter{
+				cursor: pointer;
+				span{
+					border: 1px solid #000;
+					padding: 7px 10px 5px 13px; 
+					border-radius: 100%;
+					&:hover{
+						background: #FFF;
+					}
+				}
+			}
+		}
 	}
 	.searchbar{
 		text-align:right;
